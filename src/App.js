@@ -1,24 +1,40 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from "./Navbar"
+import Home from "./pages/Home"
+import About from "./pages/About"
+import Songs from "./pages/Songs" 
+import Sell from "./pages/Sell"
+import Team from "./pages/Team"
+import {Route, Routes} from "react-router-dom"
+
 
 function App() {
+  let component
+  switch (window.location.pathname){
+    case "/":
+      component = <Home/>
+      break
+    case "/about":
+      component = <About/>
+      break
+    case "/songs":
+      component = <Songs/>
+      break
+    case "/sell":
+      component = <Sell/>
+      break
+    case "/team":
+      component = <Team/>
+      break
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <Navbar />
+    <div className="container">
+      {component}
     </div>
+  </>
   );
 }
 
