@@ -8,7 +8,7 @@ import Sell from "./pages/Sell"
 import Team from "./pages/Team"
 import {Route, Routes} from "react-router-dom"
 
-
+// this is the app
 function App() {
   let component
   switch (window.location.pathname){
